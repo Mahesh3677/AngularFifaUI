@@ -8,6 +8,9 @@ import { HeaderComponent } from './home/header/header.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { LoadingspinnerComponent } from './helpers/loadingspinner/loadingspinner.component';
+
 
 @NgModule({
   declarations:
@@ -17,16 +20,20 @@ import { HomeComponent } from './home/home.component';
      FooterComponent,
      HeaderComponent,
      NavbarComponent,
-     HomeComponent
+     HomeComponent,
+     LoadingspinnerComponent
      ],
   imports: [
     CommonModule ,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
+
   ],
   exports: [HomeComponent ,
     HeaderComponent,
   NavbarComponent,
 FooterComponent,
-DashboardComponent]
+DashboardComponent,
+LoginComponent]
 })
 export class AdminModule { }

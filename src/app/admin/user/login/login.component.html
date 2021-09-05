@@ -1,1 +1,53 @@
-<p>login works!</p>
+
+<div class="row">
+
+    <div class="col-md-6 mx-auto p-0">
+        <div class="card">
+            <div class="login-box">
+                <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                    <div class="login-space">
+                        <form #loginForm="ngForm" (ngSubmit)="onLginSubmit(loginForm)">
+                            <app-loadingspinner></app-loadingspinner>
+                        <div class="login">
+                            <div class="group"> 
+                                <label for="user" class="label">Username</label> 
+                                <input id="user" type="text" class="input" placeholder="Enter your username"> </div>
+                            <div class="group">
+                                 <label for="pass" class="label">Password</label>
+                                  <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                            <div class="group"> 
+                                <input id="check" type="checkbox" class="check" checked> 
+                                <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
+                            <div class="group"> 
+                                <input type="submit" class="button" value="Sign In"> </div>
+                            <div class="hr"></div>
+                            <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                        </div>
+                    </form>
+                    <form #regForm="ngForm" (ngSubmit)="onRegSubmit(regForm)">
+                        <div class="sign-up-form">
+                            <div class="group"> 
+                                <label for="Email" class="label">Email Address</label>
+                                 <input id="Email" type="text" class="input" placeholder="Create your Email Address"
+                                  ngModel #email required email name="email"> </div>
+                            <div class="group">
+                                 <label for="pass" class="label">Password</label>
+                                  <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password" 
+                                  #password ngModel required name="password"> </div>
+                            <div class="group"> 
+                                <label for="pass" class="label">Repeat Password</label>
+                                 <input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"
+                                 #cnfPassword ngModel required name="cnfPassword"> </div>                        
+                            <div class="group">
+                                 <input type="submit" class="button" value="Sign Up"
+                                 [disabled]="!regForm.valid && regForm.password == regForm.cnfPassword"> </div>
+                            <div class="hr"></div>
+                            <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
