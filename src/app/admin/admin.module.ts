@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginComponent } from './user/login/login.component';
+
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
@@ -10,12 +10,16 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { LoadingspinnerComponent } from './helpers/loadingspinner/loadingspinner.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-interceptor.service';
+import { AdminService } from '../shared/services/admin.service';
+
 
 
 @NgModule({
   declarations:
    [
-     LoginComponent,
+     
      DashboardComponent,
      FooterComponent,
      HeaderComponent,
@@ -26,14 +30,21 @@ import { LoadingspinnerComponent } from './helpers/loadingspinner/loadingspinner
   imports: [
     CommonModule ,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   exports: [HomeComponent ,
     HeaderComponent,
   NavbarComponent,
 FooterComponent,
-DashboardComponent,
-LoginComponent]
+DashboardComponent
+],
+providers:[{
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptorService,
+  multi: true
+},
+AdminService]
 })
 export class AdminModule { }
