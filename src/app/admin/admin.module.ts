@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
@@ -13,6 +12,9 @@ import { LoadingspinnerComponent } from './helpers/loadingspinner/loadingspinner
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { AdminService } from '../shared/services/admin.service';
+import { InputpanelComponent } from './home/inputpanel/inputpanel.component';
+import { DashboardComponent } from './home/inputpanel/dashboard/dashboard.component';
+import { CountriesListComponent } from './home/inputpanel/countries-list/countries-list.component';
 
 
 
@@ -25,7 +27,9 @@ import { AdminService } from '../shared/services/admin.service';
      HeaderComponent,
      NavbarComponent,
      HomeComponent,
-     LoadingspinnerComponent
+     LoadingspinnerComponent,
+     InputpanelComponent,
+     CountriesListComponent
      ],
   imports: [
     CommonModule ,

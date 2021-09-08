@@ -1,20 +1,8 @@
-<!-- <p>home works! here</p>
-<app-header></app-header>
-<app-footer></app-footer>
-<app-navbar></app-navbar>
-<app-dashboard></app-dashboard>
- -->
-
-
- <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    <!-- Navigation-->
-    <app-navbar></app-navbar>
-    <div class="content-wrapper">
-        <app-dashboard></app-dashboard>     
-      <app-footer></app-footer>
-   
-    
-    
-    
-    </div>
-  </body>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <app-navbar></app-navbar>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</body>
