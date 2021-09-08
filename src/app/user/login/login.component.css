@@ -199,3 +199,10 @@ a {
 ::placeholder {
     color: #b3b3b3
 }
+
+.loaderalign {
+    position: absolute;
+    margin-top: 49%;
+    margin-left: 39%;
+
+}

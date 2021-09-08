@@ -7,7 +7,6 @@
                 <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                     <div class="login-space">
                         <form #loginForm="ngForm" (ngSubmit)="onLginSubmit(loginForm)">
-                            <!-- <app-loadingspinner></app-loadingspinner> -->
                         <div class="login">
                             <div class="group"> 
                                 <label for="user" class="label">Username</label> 
@@ -20,7 +19,7 @@
                             
                             <div class="group"> 
                                 <input type="submit" class="button" value="Sign In"
-                                [disabled]="!loginForm.valid"> </div>
+                                [disabled]="!loginForm.valid" style=" cursor: pointer;"> </div>
                             <div class="hr"></div>
                           
                         </div>
@@ -43,9 +42,12 @@
                                  <input type="submit" class="button" value="Sign Up"
                                  [disabled]="!regForm.valid && regForm.password == regForm.cnfPassword"> </div>
                             <div class="hr"></div>
-                            <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                           
                         </div>
                     </form>
+                    <div class="loaderalign" *ngIf="onServerLoad">
+                    <app-loaderanimation></app-loaderanimation>
+                </div>
                     </div>
                 </div>
             </div>

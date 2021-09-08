@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { LoaderanimationComponent } from './loaderanimation/loaderanimation.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent    
+    LoginComponent,
+    LoaderanimationComponent    
   ],
   imports: [
     FormsModule,

@@ -9,7 +9,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- 
+ onServerLoad : boolean = false;
   constructor(private userService : UserService , private router : Router) { }
 
   ngOnInit(): void {
@@ -39,21 +39,24 @@ export class LoginComponent implements OnInit {
 
   onLginSubmit(loginForm : NgForm)
   {
-    
+    this.onServerLoad = true;
   const email = loginForm.form.value.userEmail;
   const password = loginForm.form.value.pass;   
   this.userService.Login(email , password)
   .subscribe(
     response=> 
     {
-        console.log(response);
+        
         this.router.navigate(['/admin'])
         loginForm.reset()
+        this.onServerLoad =false;
+
     },
     error=>
     {
         console.log(error)
-       
+        this.onServerLoad =false;
+
     }
 );
   }

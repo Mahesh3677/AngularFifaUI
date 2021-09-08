@@ -15,6 +15,7 @@ import { AdminService } from '../shared/services/admin.service';
 import { InputpanelComponent } from './home/inputpanel/inputpanel.component';
 import { DashboardComponent } from './home/inputpanel/dashboard/dashboard.component';
 import { CountriesListComponent } from './home/inputpanel/countries-list/countries-list.component';
+import { CountryComponent } from './home/inputpanel/country/country.component';
 
 
 
@@ -29,7 +30,8 @@ import { CountriesListComponent } from './home/inputpanel/countries-list/countri
      HomeComponent,
      LoadingspinnerComponent,
      InputpanelComponent,
-     CountriesListComponent
+     CountriesListComponent,
+     CountryComponent
      ],
   imports: [
     CommonModule ,
