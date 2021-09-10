@@ -109,12 +109,12 @@ export class UserService {
           (
             data => {
 
-              console.log('new refresh token')
+             
               this.handleAuth(userData.email, data.token, data.refreshToken);
 
             },
             errorMessage => {
-              console.log(errorMessage)
+              
               switch (errorMessage) {
                 case 'invalid_token':
                   this.logout();

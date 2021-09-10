@@ -2,13 +2,14 @@
 <div class=col-md-12>
     
   <form id="form-list-client">
-          <legend>List of clients</legend>
+          <legend>Countries</legend>
   
   <div class="pull-right">
      
+    <a class="btn btn-default-btn-xs btn-success" (click)="BindAllCountries()">Refresh</a>
       <a class="btn btn-default-btn-xs btn-success" (click)="onAddEdit('')">New</a>
   </div>
-  <table class="table table-bordered table-condensed table-hover">
+  <table class="table table-bordered table-condensed table-hover" *ngIf="countries">
       <thead>
           <tr>
               <td>Rank</td>
@@ -19,18 +20,18 @@
               
       </thead>
       <tbody id="form-list-client-body">
-          <tr>
-              <td>Eduardo</td>
-              <td>eluz@counterpath.com</td>
+          <tr *ngFor="let country of countries">
+              <td>{{country.rank}}</td>
+              <td>{{country.name}}</td>
               <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep">
+                <img [src]="country.flagImage" class="img-fluid img-thumbnail" >
               </td>
               <td>
                   
-                  <a class="btn btn-default btn-sm "  (click)="onAddEdit('123')">
+                  <a class="btn btn-default btn-sm "  (click)="onAddEdit(country.countryId)">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                   </a>
-                  <a class="btn btn-default btn-sm " (click)="onADelete('123')">
+                  <a class="btn btn-default btn-sm " (click)="onADelete(country.countryId)">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                   </a>
                  

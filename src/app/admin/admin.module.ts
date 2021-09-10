@@ -16,6 +16,7 @@ import { InputpanelComponent } from './home/inputpanel/inputpanel.component';
 import { DashboardComponent } from './home/inputpanel/dashboard/dashboard.component';
 import { CountriesListComponent } from './home/inputpanel/countries-list/countries-list.component';
 import { CountryComponent } from './home/inputpanel/country/country.component';
+import { CountryService } from '../shared/services/country.service';
 
 
 
@@ -51,6 +52,6 @@ providers:[{
   useClass: AuthInterceptorService,
   multi: true
 },
-AdminService]
+AdminService , CountryService]
 })
 export class AdminModule { }
